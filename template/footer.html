@@ -1,0 +1,17 @@
+<script type="text/javascript">
+    layui.config({
+        base: '/static/js/util/' //你存放新模块的目录，注意，不是layui的模块目录
+    }).use(['mm','carousel'],function(){
+        var carousel = layui.carousel,
+            mm = layui.mm;
+        var option = {
+            elem: '#test1'
+            ,width: '100%' //设置容器宽度
+            ,arrow: 'always'
+            ,height:'298'
+            ,indicator:'none'
+        }
+        carousel.render(option);
+    });
+</script>
+</html>

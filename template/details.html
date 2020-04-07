@@ -1,16 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Document</title>
-  <link rel="stylesheet" type="text/css" href="/static/css/main.css">
-  <link rel="stylesheet" type="text/css" href="/static/layui/css/layui.css">
-  <script type="text/javascript" src="/static/layui/layui.js"></script>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
-  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
-</head>
+{{template "head.html"}}
 <body>
-
   <div class="site-nav-bg">
     <div class="site-nav w1200">
       <p class="sn-back-home">
@@ -23,9 +12,6 @@
       </div>
     </div>
   </div>
-
-
-
   <div class="header">
     <div class="headerLayout w1200">
       <div class="headerCon">
@@ -134,27 +120,5 @@
       </div>
     </div>
   </div>
-<script type="text/javascript">
-  layui.config({
-    base: '/static/js/util/' //你存放新模块的目录，注意，不是layui的模块目录
-  }).use(['mm','jquery'],function(){
-      var mm = layui.mm,$ = layui.$;
-      var cur = $('.number-cont input').val();
-      $('.number-cont .btn').on('click',function(){
-        if($(this).hasClass('add')){
-          cur++;
-         
-        }else{
-          if(cur > 1){
-            cur--;
-          }  
-        }
-        $('.number-cont input').val(cur)
-      })
-      
-  });
-</script>
-
-
 </body>
-</html>
+{{template "footer.html"}}

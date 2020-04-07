@@ -26,9 +26,31 @@ func main(){
 	r.GET("/about", func(c *gin.Context) {
 		c.HTML(http.StatusOK,"about.html",gin.H{"title":"gin Shop"})
 	})
+
 	//关于我们
 	r.GET("/details", func(c *gin.Context) {
 		c.HTML(http.StatusOK,"details.html",gin.H{"title":"gin Shop"})
 	})
+
+	//购物车
+	r.GET("/shopCart", func(c *gin.Context) {
+		c.HTML(http.StatusOK,"shopCart.html",gin.H{"title":"gin Shop"})
+	})
+
+	//母婴资讯
+	r.GET("/information", func(c *gin.Context) {
+		c.HTML(http.StatusOK,"information.html",gin.H{"title":"gin Shop"})
+	})
+
+	//购物车
+	r.GET("/buyCart", func(c *gin.Context) {
+		c.HTML(http.StatusOK,"buyCart.html",gin.H{"title":"gin Shop"})
+	})
+
+	//商品分类
+	r.GET("/commotidy", func(c *gin.Context) {
+		c.HTML(http.StatusOK,"commotidy.html",gin.H{"title":"gin Shop"})
+	})
+
 	r.Run()
 }
