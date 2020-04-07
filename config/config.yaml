@@ -5,7 +5,7 @@ mysql:
   #数据库用户名
   username     : root
   #数据库密码
-  passowrd     : root
+  password     : root
   #数据库端口号
   port         : 3306
   #库名称

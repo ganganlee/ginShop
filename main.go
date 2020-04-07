@@ -5,6 +5,7 @@ import (
 	"github.com/spf13/viper"
 	"net/http"
 	"shop.zozoo.net/config"
+	"shop.zozoo.net/connect"
 )
 
 //初始化项目
@@ -17,6 +18,11 @@ func main() {
 		panic(err)
 	}
 
+	//初始化数据库连接
+	err = connect.InitMysql()
+	if err != nil {
+		panic(err)
+	}
 	//设置静态目录
 	r.Static("/static", "./static")
 	//引入模板文件
