@@ -1,0 +1,18 @@
+server :
+  #监听端口号
+  port : :8080
+mysql:
+  #数据库用户名
+  username     : root
+  #数据库密码
+  passowrd     : root
+  #数据库端口号
+  port         : 3306
+  #库名称
+  database     : ginshop
+  #库字符集
+  charset      : utf8mb4
+  #空闲连接数
+  MaxIdleConns : 10
+  #最大连接数
+  MaxOpenConns : 100
