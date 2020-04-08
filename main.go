@@ -6,6 +6,8 @@ import (
 	"net/http"
 	"shop.zozoo.net/config"
 	"shop.zozoo.net/connect"
+	"shop.zozoo.net/controller"
+	"shop.zozoo.net/decorator"
 )
 
 //初始化项目
@@ -23,15 +25,16 @@ func main() {
 	if err != nil {
 		panic(err)
 	}
+
+
+	//controller.CreateAdv()
 	//设置静态目录
 	r.Static("/static", "./static")
 	//引入模板文件
 	r.LoadHTMLGlob("template/*")
 
 	//首页
-	r.GET("/", func(c *gin.Context) {
-		c.HTML(http.StatusOK, "index.html", gin.H{"title": "gin Shop"})
-	})
+	r.GET("/", decorator.CacheDecorator(controller.Index))
 	//登陆页
 	r.GET("/login", func(c *gin.Context) {
 		c.HTML(http.StatusOK, "login.html", gin.H{"title": "gin Shop"})

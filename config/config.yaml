@@ -18,3 +18,19 @@ mysql:
   MaxIdleConns : 10
   #最大连接数
   MaxOpenConns : 100
+
+redis :
+  #超时时间
+  Timeout : 240
+  #链接类型
+  network : tcp
+  #主机地址
+  host: 123.206.201.139
+  #数据库端口号
+  port: 6379
+  #密码
+  password : 123456
+  #空闲连接数
+  MaxIdle: 10
+  #最大连接数
+  MaxActive: 100

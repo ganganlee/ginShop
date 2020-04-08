@@ -1,0 +1,24 @@
+[GIN-debug] GET    /static/*filepath         --> github.com/gin-gonic/gin.(*RouterGroup).createStaticHandler.func1 (3 handlers)
+[GIN-debug] HEAD   /static/*filepath         --> github.com/gin-gonic/gin.(*RouterGroup).createStaticHandler.func1 (3 handlers)
+[GIN-debug] Loaded HTML Templates (11): 
+	- commotidy.html
+	- details.html
+	- footer.html
+	- index.html
+	- information.html
+	- 
+	- about.html
+	- buyToday.html
+	- head.html
+	- login.html
+	- shopCart.html
+
+[GIN-debug] GET    /                         --> main.CacheDecorator.func1 (3 handlers)
+[GIN-debug] GET    /login                    --> main.main.func1 (3 handlers)
+[GIN-debug] GET    /about                    --> main.main.func2 (3 handlers)
+[GIN-debug] GET    /details                  --> main.main.func3 (3 handlers)
+[GIN-debug] GET    /shopCart                 --> main.main.func4 (3 handlers)
+[GIN-debug] GET    /information              --> main.main.func5 (3 handlers)
+[GIN-debug] GET    /buyCart                  --> main.main.func6 (3 handlers)
+[GIN-debug] GET    /commotidy                --> main.main.func7 (3 handlers)
+[GIN-debug] Listening and serving HTTP on :8080
