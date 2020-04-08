@@ -5,8 +5,8 @@ import "github.com/jinzhu/gorm"
 type Comment struct {
 	gorm.Model
 	UserId   uint   //用户id
-	Username string //用户名称
-	Avatar   string //用户头像
+	Username string `gorm:"size:50;not null"`//用户名称
+	Avatar   string `gorm:"size:125"` //用户头像
 	ShopId   uint   //商品id
-	Content  string //评论内容
+	Content  string `gorm:"size:255;not null"` //评论内容
 }

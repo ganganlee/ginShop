@@ -9,4 +9,5 @@ type Address struct {
 	Tel     string `gorm:"size:11;not null"`  //收件人电话
 	Address string `gorm:"size:255;not null"` //收件人地址
 	ZipCode uint16                            //收件人邮编
+	Order   []Order                           //定义一对多订单模型
 }
