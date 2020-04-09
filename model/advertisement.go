@@ -9,3 +9,9 @@ type Advertisement struct {
 	Url    string `gorm:"size:125;not null"` //广告链接
 	Status uint8  `gorm:"default:1"`         //广告状态
 }
+
+//定义输出结构体，
+type Adv struct {
+	Poster string
+	Url    string
+}

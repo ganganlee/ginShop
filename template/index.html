@@ -1,4 +1,4 @@
-{{template "head.html" .}}
+{{template "layout_head.html" .}}
 <body id="list-cont">
   <div class="site-nav-bg">
     <div class="site-nav w1200">
@@ -101,9 +101,9 @@
         </div>
       </div>
       <div class="category-banner">
-        <div class="w1200">
-          <img src="/static/img/banner1.jpg">
-        </div>
+        <a class="w1200" href="{{.adv.Url}}">
+          <img src="{{.adv.Poster}}">
+        </a>
       </div>
     </div>
     <div class="floors">
@@ -451,4 +451,4 @@
     </div>
   </div>
 </body>
-{{template "footer.html"}}
+{{template "layout_footer.html"}}
