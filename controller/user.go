@@ -31,12 +31,13 @@ func Register(c *gin.Context) {
 		return
 	}
 
-	//加密用户密码
-	data := []byte(userInfo.Password)
+	//创建数据
+
 	//获取ip
 	userInfo.Ip = c.ClientIP()
 
-	//创建数据
+	//加密用户密码
+	data := []byte(userInfo.Password)
 	userInfo.Password = fmt.Sprintf("%x", md5.Sum(data))
 	Db.Create(userInfo)
 
