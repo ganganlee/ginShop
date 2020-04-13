@@ -17,6 +17,7 @@ func IsLoginMiddleware() gin.HandlerFunc {
 		var isLogin bool
 		//获取用户缓存key
 		userKey, _ := c.Cookie("userInfo")
+		fmt.Println(userKey)
 
 		if userKey != "" {
 			//前往redis获取数据，如果数据存在，说明还是登陆状态，否则未登录
