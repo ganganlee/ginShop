@@ -8,7 +8,8 @@ import (
 func CreateRoute(c *gin.Engine) {
 	c.Use(IsLoginMiddleware())
 	//用户注册
-	c.POST("/register",controller.Register)
+	c.GET("/register",controller.Register)
+	c.POST("/register",controller.HandlerRegister)
 
 	//用户登陆
 	c.GET("/login",controller.Login)

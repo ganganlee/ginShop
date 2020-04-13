@@ -69,7 +69,7 @@
                         </div>
                         <div class="layui-form-item login-btn">
                             <div class="layui-input-block">
-                                <button class="layui-btn" onclick="register()">登陆</button>
+                                <button class="layui-btn" onclick="login()">登陆</button>
                             </div>
                         </div>
                     </div>
@@ -197,7 +197,7 @@
             if(json.code == 200){
                 layer.msg("登陆成功", {icon: 6});
                 setTimeout(function () {
-                    window.location.href = "/";
+                    // window.location.href = "/";
                 },1000)
             }else {
                 layer.msg(json.msg, {icon: 0});
