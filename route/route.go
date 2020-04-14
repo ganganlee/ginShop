@@ -3,6 +3,7 @@ package route
 import (
 	"github.com/gin-gonic/gin"
 	"shop.zozoo.net/controller"
+	. "shop.zozoo.net/decorator"
 )
 
 func CreateRoute(c *gin.Engine) {
@@ -14,4 +15,7 @@ func CreateRoute(c *gin.Engine) {
 	//用户登陆
 	c.GET("/login",controller.Login)
 	c.POST("/login",controller.HandleLogin)
+
+	//商城首页
+	c.GET("/",CacheDecorator(controller.Index))
 }

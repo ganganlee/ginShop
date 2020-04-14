@@ -5,7 +5,6 @@ import (
 	"fmt"
 	"github.com/garyburd/redigo/redis"
 	"github.com/gin-gonic/gin"
-	"github.com/golang/protobuf/ptypes/empty"
 	"net/http"
 	. "shop.zozoo.net/connect"
 	"shop.zozoo.net/model"
@@ -27,7 +26,7 @@ func CacheDecorator(h gin.HandlerFunc) gin.HandlerFunc {
 			res, exists := c.Get("dbAdv")
 			if !exists {
 				//数据库不存在
-				res = empty.Empty{}
+				res = nil
 			}
 			shopAdv, _ = json.Marshal(res)
 
@@ -45,6 +44,9 @@ func CacheDecorator(h gin.HandlerFunc) gin.HandlerFunc {
 			Url:    advert.Url,
 		}
 
-		c.HTML(http.StatusOK, "index.html", gin.H{"adv": adv})
+		c.HTML(http.StatusOK, "index.html", gin.H{
+			"title": "商城首页",
+			"adv":   adv,
+		})
 	}
 }
