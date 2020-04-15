@@ -20,6 +20,7 @@ func CacheDecorator(h gin.HandlerFunc) gin.HandlerFunc {
 		conn := redisPool.Get()
 		shopAdv, err := redis.Bytes(conn.Do("get", "shop_adv"))
 		//判断缓存出错或者缓存不存在
+		shopAdv = nil
 		if err != nil || shopAdv == nil {
 			//查询数据库
 			h(c)
@@ -33,20 +34,22 @@ func CacheDecorator(h gin.HandlerFunc) gin.HandlerFunc {
 			conn.Do("setex", "shop_adv", 24*60*60, string(shopAdv))
 		}
 		//将字符串解析为结构体输出
-		var advert = new(model.Advertisement)
-		err = json.Unmarshal(shopAdv, advert)
+		var data map[string]interface{} = map[string]interface{}{
+			"adv":  new(model.Advertisement),
+			"cate": map[string][]model.Cate{},
+		}
+
+		err = json.Unmarshal(shopAdv, &data)
 		if err != nil {
 			fmt.Println(err)
 		}
 
-		var adv = model.Adv{
-			Poster: advert.Poster,
-			Url:    advert.Url,
-		}
+		fmt.Println(data)
 
 		c.HTML(http.StatusOK, "index.html", gin.H{
 			"title": "商城首页",
-			"adv":   adv,
+			"adv":   data["adv"],
+			"cate":  data["cate"],
 		})
 	}
 }

@@ -10,3 +10,10 @@ type Category struct {
 	Status uint8 `gorm:"default:1"` //分类状态
 	Shop   []Shop
 }
+
+type Cate struct {
+	Id    uint
+	Name  string
+	Level uint8
+	Sort  uint
+}
